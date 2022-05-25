@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('title');
             $table->text('description');
             $table->date('date');
-            $table->string('archive');
+            $table->string('grade');
+            //$table->string('file');
             $table->timestamps();
         });
     }
