@@ -6,17 +6,17 @@
 
 
 <x-app-layout>
-    <x-slot name="header">
-        <div class="card">
-            <div class=" header-card card-body card-background">Home</div>
-        </div>
-    </x-slot>
-
-
+        <x-slot name="header">
+            <div class="card">
+                <div class=" header-card card-body card-background">Gerenciamento de Projetos</div>
+            </div>
+        </x-slot>
 </x-app-layout>
 
 <style>
-        .header-card {
+
+
+    .header-card {
         color: #ffff;
         background-color: #fb923c;
         display: flex;
@@ -30,4 +30,3 @@
     }
 
 </style>
-

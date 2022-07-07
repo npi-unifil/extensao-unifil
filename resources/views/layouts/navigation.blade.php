@@ -1,29 +1,35 @@
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class=" mx-auto px-2 sm:px-3 lg:px-4" style="background-color:#f97316">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
+                        <img src="https://unifil.br/assets/uploads/2019/10/logo.svg" style="height: 55px; width: 55px;" alt="">
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                <div class=" nav-bar hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link class="nav-links"  :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
+                    </x-nav-link>
+                    <x-nav-link class="nav-links" :href="route('list')" :active="request()->routeIs('list')">
+                        {{__('Lista de Atividades')}}
+                    </x-nav-link>
+                    <x-nav-link class="nav-links" :href="route('projects')" :active="request()->routeIs('projects')">
+                        {{__('Gerenciamento de Projetos')}}
                     </x-nav-link>
                 </div>
             </div>
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
-                <x-dropdown align="right" width="48">
+                <x-dropdown  align="right" width="48">
                     <x-slot name="trigger">
-                        <button class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
-                            <div>{{ Auth::user()->name }}</div>
+                        <button style="color: white;" class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+                            <div style="color: white;">{{ Auth::user()->name }}</div>
 
                             <div class="ml-1">
                                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -90,3 +96,19 @@
         </div>
     </div>
 </nav>
+
+
+<style>
+    .nav-bar {
+        justify-content: center;
+    }
+.nav-links {
+    color: #ffff;
+    text-decoration: none;
+}
+
+.nav-links:hover {
+    color: #4b5563;
+}
+
+</style>

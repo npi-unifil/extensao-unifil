@@ -5,6 +5,38 @@
 @endsection()
 
 @section('conteudo')
+
+<style>
+
+    .button {
+        color: #ffff !important;
+        background-color: #fb923c;
+    }
+
+    .card {
+        background-color: #64748b !important;
+    }
+
+
+    .card-header {
+        background-color: #fb923c !important;
+        color: #ffff !important;
+    }
+
+    .label {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+
+    }
+    .card {
+        background-color: #ffff;
+    }
+
+    .form-control {
+        background-color: #dddd;
+    }
+</style>
 <div class="container mt-4">
     @if(session('status'))
     <div class="alert alert-success">
@@ -13,33 +45,54 @@
     @endif
     <div class="card">
         <div class="card-header text-center font-weight-bold">
-            Cadastro de atividades.
+            Cadastro de atividades
         </div>
         <div class="card-body form-floating mb-3">
-            <form name="add-blog-post-form" class="row g-3" id="add-blog-post-form" method="post" action="{{url('store-form')}}" >
+            <form name="add-blog-post-form" class="row g-3 formulario" id="add-blog-post-form" method="post" action="{{url('store-form')}}" >
                 @csrf
-                <div class="form-group form-floating d-flex flex">
-                    <input type="text" id="title floatingInputGrid" name="title" class="form-control floatingInput" required="">
-                    <label for="floatingInput">Titulo de atividade</label>
+                <div class="form-floating mb-3 d-flex flex">
+                    <input
+                    id="floatingInput"
+                    name="title"
+                    placeholder="Tituto de atividade"
+                    class="form-control floatingInput"
+                    type="text"
+                    required="">
+                    <label class="label" for="floatingInput">Titulo de atividade</label>
                 </div>
-                <div class="form-group form-floating">
-                    <textarea name="description" class="form-control" required=""></textarea>
+                <div class="form-floating mb-3">
+                    <textarea
+                    style="height: 100px"
+                    id="floatingTextarea2"
+                    name="description"
+                    placeholder="Descrição"
+                    class="form-control floatingInput"
+                    required=""></textarea>
                     <label for="floatingTextarea">Descrição</label>
                 </div>
                 <div class="form-group form-floating">
-                    <input type="number"
+                    <input
+                    id="floatingInput"
                     name="grade"
+                    placeholder="Valor Atribuido"
+                    class="form-control floatingInput"
                     inputmode="numeric"
                     min="0"
                     max="100"
-                    class="form-control"
+                    type="number"
                     />
-                    <label for="floatingInput">Valor Atribuido</label>
+                    <label for="floatingInput">Nota</label>
                 </div>
 
                     <div class="form-group form-floating">
-                        <input type="date" name="date" class="form-control" required=""></input>
-                        <label for="floatingInput">Date</label>
+                        <input
+                        id="floatingInput"
+                        name="date"
+                        placeholder="dd/mm/aaaa"
+                        class="form-control floatingInput"
+                        type="date"
+                    ></input>
+                        <label for="floatingInput">Data de Entrega</label>
                     </div>
 
                     {{--<div class="form-group form-floating">
@@ -49,7 +102,7 @@
 
                 <div class="form-group form-floating justify-content-md-end d-grid gap-2 d-md-flex">
                     <a href="list" type="button" class="btn btn-danger  align-items-center">Cancelar</a>
-                    <button  href="list" type="submit" class="btn btn-primary col-md-1">Enviar</button>
+                    <button  href="list" type="submit" class="btn button col-md-1">Enviar</button>
 
             </div>
             </form>
@@ -57,3 +110,5 @@
     </div>
 </div>
 @endsection()
+
+

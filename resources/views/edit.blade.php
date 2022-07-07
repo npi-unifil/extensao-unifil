@@ -16,7 +16,7 @@
         <div class="card-header text-center font-weight-bold">
             Editar Atividade
         </div>
-        <div class="card-body form-floating mb-3">
+        <div class="card-body card-test form-floating mb-3">
             <form   name="add-blog-post-form"
                     class="row g-3"
                     id="add-blog-post-form"
@@ -27,11 +27,11 @@
 
                 <div class="form-group form-floating d-flex flex">
                     <input type="text" id="title" name="title" class="form-control floatingInputGrid" value="{{$post->title}}" required="">
-                    <label for="floatingInput">Title</label>
+                    <label for="floatingInput">Titulo</label>
                 </div>
                 <div class="form-group form-floating">
-                    <textarea type="text" name="description" class="form-control"  required="">{{$post->description}}</textarea>
-                    <label for="floatingTextArea">Description</label>
+                    <textarea type="text" name="description" class="form-control"  style="height:100%"required="">{{$post->description}}</textarea>
+                    <label for="floatingTextArea">Descrição</label>
                 </div>
                 <div class="form-group form-floating">
                     <input type="number"
@@ -42,18 +42,49 @@
                     class="form-control"
                     value="{{$post->grade}}"
                     />
-                    <label for="floatingInput">Valor Atribuido</label>
+                    <label for="floatingInput">Nota</label>
                 </div>
-                <div>
                     <div class="form-group form-floating">
                         <input type="date" name="date" class="form-control"  value="{{$post->date}}" required=""></input>
-                        <label for="floatingInput">Date</label>
+                        <label for="floatingInput">Data de Entrega</label>
                     </div>
-                </div>
-                <button  href="list" type="submit" class="btn btn-primary  align-items-center">Enviar</button>
-                <a href={{url('/list')}} type="button" class="btn btn-danger  align-items-center">Cancelar</a>
+                    <div class="form-group form-floating justify-content-md-end d-grid gap-2 d-md-flex">
+                        <a href={{url('/list')}} type="button" class="btn btn-danger align-items-center">Cancelar</a>
+                        <button  href="list" type="submit" class="btn save-button  align-items-center">Confirmar</button>
+            </div>
             </form>
         </div>
     </div>
 </div>
+
+<style>
+
+    .cancel-button {
+
+    }
+
+    .save-button {
+        color: #ffff !important;
+        background-color: #fb923c;
+    }
+
+    .card {
+        background-color: #64748b !important;
+    }
+
+    .card-header {
+        background-color: #fb923c !important;
+        color: #ffff !important;
+    }
+
+    .card-body {
+        background-color: #64748b !important;
+    }
+
+    .form-control {
+        background-color: #dddd;
+    }
+
+
+</style>
 @endsection()

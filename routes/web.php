@@ -18,12 +18,16 @@ use App\Http\Controllers\Auth\LoginController;
 */
 
 Route::get('/', function () {
-    return redirect('login');
+    return redirect('register');
 });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::get('/projects', function() {
+    return view('projects');
+})->middleware(['auth'])->name('projects');
 
 Route::get('form', [PostController::class, 'index']);
 Route::post('store-form', [PostController::class, 'store']);
