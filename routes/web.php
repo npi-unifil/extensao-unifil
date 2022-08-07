@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\Auth\LoginController;
-
+use App\Http\Controllers\CoursesController;
+use App\Http\Controllers\CreateCourse;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +18,9 @@ use App\Http\Controllers\Auth\LoginController;
 |
 */
 
-Route::get('/', function () {
-    return redirect('register');
-});
+//Route::get('/', function () {
+//    return redirect('register');
+//});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -29,6 +30,8 @@ Route::get('/projects', function() {
     return view('projects');
 })->middleware(['auth'])->name('projects');
 
+
+//Atividades
 Route::get('form', [PostController::class, 'index']);
 Route::post('store-form', [PostController::class, 'store']);
 Route::get('list', [ActivityController::class, 'showActivity'])->name('list');
@@ -37,6 +40,16 @@ Route::get('list', [ActivityController::class, 'showActivity'])->name('list');
 Route::delete('list/{id}', [ActivityController::class, 'delete']);
 Route::get('list/edit/{id}', [ActivityController::class, 'edit']);
 Route::patch('list/{id}/update', [ActivityController::class, 'update'])->name('update');
+
+
+//Cursos//
+Route::get('courseForm', [CreateCourse::class, 'CoursePage']);
+Route::post('store-course-form', [CoursesController::class, 'storeCourse']);
+Route::get('course-list', [CreateCourse::class, 'showCourses']);
+
+route::get('/courses', function() {
+    return view('course-register');
+})->middleware(['auth'])->name('courses');
 
 
 //Route::get('/redirect', [LoginController::class, 'redirectToProvider']);
