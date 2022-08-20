@@ -9,6 +9,17 @@
         <div class="card">
             <div class=" header-card card-body card-background">Cursos</div>
         </div>
+        <div class=" body-card card-body">
+        @foreach ($courses as $course)
+
+            <div class="card">
+                <div class="space header-card card-body card-background">
+                    <a href="coursePage">{{$course['courseName']}}</a>
+                </div>
+            </div>
+
+
+        @endforeach
     </x-slot>
 
     @section('conteudo')
@@ -21,6 +32,13 @@
 
 
 <style>
+
+    .space{
+        text-decoration-color: #374151;
+        margin-top: 3px;
+        display:flex;
+        justify-content: space-between;
+    }
 
     .newCourse {
     width:100%;
@@ -36,7 +54,7 @@
     color: #ffff;
     background-color: #fb923c;
     display: flex;
-    justify-content: center
+    justify-content: center;
 }
 
 .card-main {

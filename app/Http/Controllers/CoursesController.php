@@ -2,15 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
+use App\Models\Courses;
 
 
 use Illuminate\Http\Request;
 
 class CoursesController extends Controller
 {
-    function showCourses(){
-        $data = Post::all();
-        return view('course-register', ['posts'=>$data]);
+    function courseList(){
+        $courses = Courses::all();
+        return view('course-register', ['courses'=>$courses]);
+    }
+
+    function coursePage(){
+        $courses = Courses::all();
+        return view('course-page', ['courses'=>$courses]);
     }
 }
+

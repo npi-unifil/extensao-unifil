@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Post;
+use App\Models\Courses;
 
 class CreateCourse extends Controller
 {
@@ -14,10 +14,10 @@ class CreateCourse extends Controller
 
     public function  storeCourse(Request $request)
     {
-        $post = new Post;
-        $post->courseName = $request->courseName;
-        $post->courseYear = $request->courseYear;
-        $post->save();
-        return redirect('courses')->with('status', 'New Course Inserted');
+        $courses = new Courses;
+        $courses->courseName = $request->courseName;
+        $courses->courseYear = $request->courseYear;
+        $courses->save();
+        return redirect('courses')->with('status', 'Activity Post has been inserted');
     }
 }

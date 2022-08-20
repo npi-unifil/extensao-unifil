@@ -43,13 +43,13 @@ Route::patch('list/{id}/update', [ActivityController::class, 'update'])->name('u
 
 
 //Cursos//
-Route::get('courseForm', [CreateCourse::class, 'CoursePage']);
-Route::post('store-course-form', [CoursesController::class, 'storeCourse']);
-Route::get('course-list', [CreateCourse::class, 'showCourses']);
 
-route::get('/courses', function() {
-    return view('course-register');
-})->middleware(['auth'])->name('courses');
+
+Route::get('coursePage', [CoursesController::class, 'coursePage']);
+Route::get('courseForm', [CreateCourse::class, 'CoursePage']);
+Route::post('store-course-form', [CreateCourse::class, 'storeCourse']);
+Route::get('courses', [CoursesController::class, 'courseList']);
+
 
 
 //Route::get('/redirect', [LoginController::class, 'redirectToProvider']);
