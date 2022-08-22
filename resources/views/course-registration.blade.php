@@ -6,37 +6,6 @@
 
 @section('conteudo')
 
-<style>
-
-    .button {
-        color: #ffff !important;
-        background-color: #fb923c;
-    }
-
-    .card {
-        background-color: #64748b !important;
-    }
-
-
-    .card-header {
-        background-color: #fb923c !important;
-        color: #ffff !important;
-    }
-
-    .label {
-        justify-content: center;
-        display: flex;
-        align-items: center;
-
-    }
-    .card {
-        background-color: #ffff;
-    }
-
-    .form-control {
-        background-color: #dddd;
-    }
-</style>
 <div class="container mt-4">
     @if(session('status'))
     <div class="alert alert-success">
@@ -96,3 +65,34 @@
 @endsection()
 
 
+<style>
+
+    .button {
+        color: #ffff !important;
+        background-color: #fb923c;
+    }
+
+    .card {
+        background-color: #64748b !important;
+    }
+
+
+    .card-header {
+        background-color: #fb923c !important;
+        color: #ffff !important;
+    }
+
+    .label {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+
+    }
+    .card {
+        background-color: #ffff;
+    }
+
+    .form-control {
+        background-color: #dddd;
+    }
+</style>
