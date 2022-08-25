@@ -55,15 +55,16 @@
 
                     <div class="form-group form-floating">
                         <input
-                        id="floatingInput"
+                        id="floatingInput today"
                         name="date"
                         placeholder="dd/mm/aaaa"
                         class="form-control floatingInput"
                         type="date"
+                        min="{{ date('Y-m-d') }}"
                     ></input>
                         <label for="floatingInput">Data de Entrega</label>
                     </div>
-
+                    {{-- {!! Form::date($name, $value, ['class' => '', 'min' => date]) !!} --}}
                     {{--<div class="form-group form-floating">
                         <input name="file" type="file" class="form-control" id="inputGroupFile01" required="">
                     </div>
@@ -80,12 +81,15 @@
 </div>
 @endsection()
 
+<script>
+
+</script>
 
 <style>
 
     .button {
         color: #ffff !important;
-        background-color: #fb923c;
+        background-color: #fb923c !important;
     }
 
     .card {

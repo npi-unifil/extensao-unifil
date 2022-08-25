@@ -21,6 +21,9 @@
                     <x-nav-link class="nav-links" :href="route('projects')" :active="request()->routeIs('projects')">
                         {{__('Gerenciamento de Projetos')}}
                     </x-nav-link>
+                    <x-nav-link class="nav-links" :href="route('courses')" :active="request()->routeIs('courses')">
+                        {{__('Cursos')}}
+                    </x-nav-link>
                 </div>
             </div>
 

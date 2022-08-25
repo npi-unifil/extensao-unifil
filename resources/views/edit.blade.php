@@ -41,11 +41,19 @@
                     max="100"
                     class="form-control"
                     value="{{$post->grade}}"
+
                     />
                     <label for="floatingInput">Nota</label>
                 </div>
                     <div class="form-group form-floating">
-                        <input type="date" name="date" class="form-control"  value="{{$post->date}}" required=""></input>
+                        <input
+                        type="date"
+                        name="date"
+                        class="form-control"
+                        value="{{$post->date}}"
+                        required=""
+                        min="{{ date('Y-m-d') }}">
+                    </input>
                         <label for="floatingInput">Data de Entrega</label>
                     </div>
                     <div class="form-group form-floating justify-content-md-end d-grid gap-2 d-md-flex">

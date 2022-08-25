@@ -48,7 +48,7 @@ Route::patch('list/{id}/update', [ActivityController::class, 'update'])->name('u
 Route::get('coursePage', [CoursesController::class, 'coursePage']);
 Route::get('courseForm', [CreateCourse::class, 'CoursePage']);
 Route::post('store-course-form', [CreateCourse::class, 'storeCourse']);
-Route::get('courses', [CoursesController::class, 'courseList']);
+Route::get('courses', [CoursesController::class, 'courseList'])->name('courses');;
 
 
 
