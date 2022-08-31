@@ -9,14 +9,13 @@
         <div class="card">
             <div class=" header-card card-body card-background">Cursos</div>
         </div>
+
         <div class=" body-card card-body">
         @foreach ($courses as $course)
 
-            <div class="card">
-                <div class="space header-card card-body card-background">
-                    <a href="coursePage">{{$course['courseName']}}</a>
-                </div>
-            </div>
+        <div class="list-group list-custom">
+        <a class="list-group-item" href="{{route('courseid', $course->id)}}">{{$course['courseName']}}</a>
+        </div>
 
 
         @endforeach
@@ -33,6 +32,11 @@
 
 <style>
 
+    .body-card {
+        width: 100%;
+        justify-content: center;
+    }
+
     .space{
         text-decoration-color: #374151;
         margin-top: 3px;
@@ -47,11 +51,8 @@
     margin-top:4px;
     justify-content: center;
 }
-
-
-
     .header-card {
-    color: #ffff;
+    color: #fff;
     background-color: #fb923c;
     display: flex;
     justify-content: center;
@@ -79,5 +80,19 @@
     justify-content: center;
     align-content: center;
     opacity: 1;
+}
+
+.list-group {
+    margin-bottom: 5px !important;
+    flex-direction: unset !important;
+    justify-content: center !important;
+}
+
+.list-group-item {
+    color: #fff !important;
+    background-color: #fb923c !important;
+    display: flex !important;
+    justify-content: center;
+    width: 50% !important;
 }
 </style>
