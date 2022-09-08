@@ -10,11 +10,12 @@
     @section('conteudo')
     <x-slot>
 
+        <div class="corrigir">
         <div class=" body-card card-body">
     @foreach ($posts as $post)
-    <div class="accordion-card">
+    <div class="accordion-card  accordion-config">
         <div class=" accordions accordion accordion-flush" id="accordionFlushExample">
-            <div class="accordion-item">
+            <div class="accordion-card accordion-item">
 
                 <h2 class="accordion-header text-warning bg-dark" id={{ $post->id }}>
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -69,9 +70,11 @@
                     </div>
                 </div>
             </div>
+            </div>
     @endforeach
     <div class="newActivity">
     <a type="button" class="button btn " href='form'>Criar nova atividade</a>
+</div>
 </div>
 </div>
 </div>
@@ -79,16 +82,29 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 
 
-
-
 <style>
+
+    .card-body {
+        width: 100% !important;
+    }
+
+    .corrigir {
+        display: flex !important;
+        justify-content: center !important;
+        width: 100%;
+    }
 
     .edit-button {
         background-color: #fb923c !important;
         color: #ffff !important;
     }
 
+    .accordion-card{
+        width: 100% !important;
+    }
+
     .accordion-item {
+
         background-color: #fb923c !important;
     }
 

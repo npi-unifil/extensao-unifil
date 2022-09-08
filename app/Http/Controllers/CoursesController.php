@@ -32,5 +32,11 @@ class CoursesController extends Controller
         return view('course-page', ['course'=>$course]);
     }
 
+    function deleteCourse($id){
+        $course=Courses::find($id);
+        $course->delete();
+            return redirect()-> back();
+    }
+
 }
 

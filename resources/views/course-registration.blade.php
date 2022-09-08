@@ -47,7 +47,7 @@
                     </select>
                     <label for="floatingTextarea">Periodo atual do curso </label>
                 </div>
-                </div>
+
                     {{--<div class="form-group form-floating">
                         <input name="file" type="file" class="form-control" id="inputGroupFile01" required="">
                     </div>
@@ -56,8 +56,8 @@
                 <div class="form-group form-floating justify-content-md-end d-grid gap-2 d-md-flex">
                     <a href="courses" type="button" class="btn btn-danger  align-items-center">Cancelar</a>
                     <button  href="listCourse" type="submit" class="btn button col-md-1">Enviar</button>
-
             </div>
+        </div>
             </form>
         </div>
     </div>
@@ -69,7 +69,7 @@
 
     .button {
         color: #ffff !important;
-        background-color: #fb923c;
+        background-color: #fb923c !important;
     }
 
     .card {
