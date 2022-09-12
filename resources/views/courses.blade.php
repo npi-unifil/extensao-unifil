@@ -47,61 +47,46 @@
 
 <style>
 
-    .body-card {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .space{
-        text-decoration-color: #374151;
-        margin-top: 3px;
-        display:flex;
-        justify-content: space-between;
-    }
-
-    .newCourse {
-    width:100%;
-    height: 100%;
-    display:flex;
-    margin-top:4px;
+.body-card {
     justify-content: center;
-}
-
-    .header-card {
-    color: #fff;
-    background-color: #fb923c;
-    display: flex;
-    justify-content: center;
-}
-
-.card-main {
-    border-radius: 5px;
-    display: flex;
-    background-color: #374151 !important;
-}
-
-.button-links{
-    width:100%;
-    height: 100%;
-    display:flex;
-    margin-top:4px;
-    justify-content: center;
+    width: 100%;
 }
 
 .button{
-    color: #ffff !important;
-    background-color: #fb923c !important;
-    display:flex;
-    width:50%;
-    justify-content: center;
     align-content: center;
+    background-color: #fb923c !important;
+    color: #ffff !important;
+    display:flex;
+    justify-content: center;
     opacity: 1;
+    width:50%;
+}
+
+.button-links{
+    display:flex;
+    height: 100%;
+    justify-content: center;
+    margin-top:4px;
+    width:100%;
+}
+
+.card-main {
+    background-color: #374151 !important;
+    border-radius: 5px;
+    display: flex;
+}
+
+.header-card{
+    background-color: #fb923c;
+    color: #fff;
+    display: flex;
+    justify-content: center;
 }
 
 .list-group {
-    margin-bottom: 5px !important;
     flex-direction: unset !important;
     justify-content: center !important;
+    margin-bottom: 5px !important;
 }
 
 .list-group-item:hover {
@@ -109,11 +94,27 @@
 }
 
 .list-group-item{
-    opacity:0.9;
-    color: #fff !important;
     background-color: #fb923c !important;
+    color: #fff !important;
     display: flex !important;
     justify-content: center;
+    opacity:0.9;
     width: 50% !important;
 }
+
+.newCourse{
+    display:flex;
+    height: 100%;
+    justify-content: center;
+    margin-top:4px;
+    width:100%;
+}
+
+.space{
+    display:flex;
+    justify-content: space-between;
+    margin-top: 3px;
+    text-decoration-color: #374151;
+}
+
 </style>

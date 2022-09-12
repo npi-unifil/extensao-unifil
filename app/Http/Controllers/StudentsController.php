@@ -8,8 +8,8 @@ use App\Models\Student;
 
 class StudentsController extends Controller
 {
-    public function StudentsPage(){
-        return view('');
+    public function studentsPage(){
+        return view('student-page');
 }
 
 public function  storeStudents(Request $request)

@@ -40,10 +40,6 @@ extends('layout')
                     <label for="floatingTextarea">Email Estudantil</label>
                 </div>
                 </div>
-                    {{--<div class="form-group form-floating">
-                        <input name="file" type="file" class="form-control" id="inputGroupFile01" required="">
-                    </div>
-                    --}}
 
                 <div class="form-group form-floating justify-content-md-end d-grid gap-2 d-md-flex">
                     <a href="courses" type="button" class="btn btn-danger  align-items-center">Cancelar</a>
@@ -55,8 +51,3 @@ extends('layout')
     </div>
 </div>
 @endsection()
-
-
-<style>
-
-</style>

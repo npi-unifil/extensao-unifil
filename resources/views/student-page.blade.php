@@ -51,27 +51,28 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 
 <style>
-    .carousel-item {
-        width: 100%;
-        height: 100%;
-    }
 
-    .carousel-image {
-        width: 100%;
-        height: 100%;
-    }
+.card-main {
+    border-radius: 5px;
+    display: flex;
+    background-color: #374151 !important;
+}
 
+.carousel-image {
+    width: 100%;
+    height: 100%;
+}
 
-    .header-card {
-        color: #ffff;
-        background-color: #fb923c;
-        display: flex;
-        justify-content: center
-    }
+.carousel-item {
+    width: 100%;
+    height: 100%;
+}
 
-    .card-main {
-        border-radius: 5px;
-        display: flex;
-        background-color: #374151 !important;
-    }
+.header-card {
+    color: #ffff;
+    background-color: #fb923c;
+    display: flex;
+    justify-content: center
+}
+
 </style>

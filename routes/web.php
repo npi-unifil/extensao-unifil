@@ -27,9 +27,6 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/projects', function() {
-    return view('projects');
-})->middleware(['auth'])->name('projects');
 
 
 //Atividades
@@ -53,11 +50,11 @@ Route::delete('coursePage/{id}', [CoursesController::class, 'deleteCourse']);
 
 // Estudantes//
 
+Route::get('students', [StudentsController::class, 'studentsPage'])->name('students');
+
 Route::post('courses', [StudentsController::class, 'storeStudents']);
 
 //Route::get('/redirect', [LoginController::class, 'redirectToProvider']);
 //Route::get('/callback', 'LoginController');
-
-
 
 require __DIR__.'/auth.php';

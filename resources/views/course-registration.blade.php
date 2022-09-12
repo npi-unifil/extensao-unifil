@@ -68,8 +68,8 @@
 <style>
 
     .button {
-        color: #ffff !important;
         background-color: #fb923c !important;
+        color: #ffff !important;
     }
 
     .card {
@@ -82,17 +82,13 @@
         color: #ffff !important;
     }
 
-    .label {
-        justify-content: center;
-        display: flex;
-        align-items: center;
-
-    }
-    .card {
-        background-color: #ffff;
-    }
-
     .form-control {
         background-color: #dddd;
+    }
+
+    .label {
+        align-items: center;
+        display: flex;
+        justify-content: center;
     }
 </style>

@@ -43,19 +43,20 @@
 
 <style>
 
-.tablediv {
-    width: 100%;
-    display:flex;
-    justify-content: center;
-}
-
 .tabela {
-    width: 50%;
     display:flex;
     justify-content: center;
+    width: 50%;
 }
 
 .table {
     margin: 0 auto;
 }
+
+.tablediv {
+    display:flex;
+    justify-content: center;
+    width: 100%;
+}
+
 </style>

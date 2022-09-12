@@ -53,7 +53,6 @@
                         value="{{$post->date}}"
                         required=""
                         min="{{ date('Y-m-d') }}">
-                    </input>
                         <label for="floatingInput">Data de Entrega</label>
                     </div>
                     <div class="form-group form-floating justify-content-md-end d-grid gap-2 d-md-flex">
@@ -67,32 +66,26 @@
 
 <style>
 
-    .cancel-button {
+.card {
+    background-color: #64748b !important;
+}
 
-    }
+.card-body {
+    background-color: #64748b !important;
+}
 
-    .save-button {
-        color: #ffff !important;
-        background-color: #fb923c;
-    }
+.card-header {
+    background-color: #fb923c !important;
+    color: #ffff !important;
+}
 
-    .card {
-        background-color: #64748b !important;
-    }
+.form-control {
+    background-color: #dddd;
+}
 
-    .card-header {
-        background-color: #fb923c !important;
-        color: #ffff !important;
-    }
-
-    .card-body {
-        background-color: #64748b !important;
-    }
-
-    .form-control {
-        background-color: #dddd;
-    }
-
-
+.save-button {
+    background-color: #fb923c;
+    color: #ffff !important;
+}
 </style>
 @endsection()

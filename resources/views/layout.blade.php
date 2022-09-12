@@ -25,19 +25,21 @@
 </html>
 
 <style>
-    body{
-        background-color: #374151;
-        overflow: auto;
-    }
 
-    .jumbotron {
-        background-color:#F29400;
-    }
+body{
+    background-color: #374151;
+    overflow: auto;
+}
 
-    .cabecalho {
-        display:flex;
-        align-items: center;
-        justify-content: center;
-        color: #FFFF;
-    }
+.cabecalho {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFF;
+}
+
+.jumbotron {
+    background-color:#F29400;
+}
+
 </style>
