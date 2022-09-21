@@ -15,8 +15,10 @@ class StudentsController extends Controller
 public function  storeStudents(Request $request)
     {
         $student = new Student;
+        $student->studentId = $request->studentId;
         $student->studentName = $request->studentName;
         $student->studentCourse = $request->studentCourse;
+        $student->studentEmail = $request->studentEmail;
         $student->studentPeriod = $request->studentPeriod;
         $student->save();
         return redirect('courses')->with('status', 'Activity Post has been inserted');

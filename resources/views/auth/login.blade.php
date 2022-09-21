@@ -50,7 +50,16 @@
                 <x-button class="ml-3">
                     {{ __('Logar') }}
                 </x-button>
+
+
+
+
             </div>
         </form>
+        <x-button>
+            <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{route('Google')}}">botao</a>
+
+        </x-button>
+
     </x-auth-card>
 </x-guest-layout>

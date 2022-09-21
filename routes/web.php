@@ -3,10 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ActivityController;
-use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\CreateCourse;
 use App\Http\Controllers\StudentsController;
+
+use App\Http\Controllers\Auth\LoginController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +21,16 @@ use App\Http\Controllers\StudentsController;
 |
 */
 
-//Route::get('/', function () {
-//    return redirect('register');
-//});
+
+Route::get('/redirect', [LoginController::class, 'redirectToProvider'])->name('Google');
+Route::get('/callback', [LoginController::class, 'handleProviderCallback']);
+
+
+
+
+Route::get('/', function () {
+    return redirect('login');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
