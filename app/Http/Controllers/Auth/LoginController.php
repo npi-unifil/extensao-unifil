@@ -26,7 +26,6 @@ class LoginController
         }
         // only allow people with @company.com to login
         if(explode("@", $user->email)[1] !== 'edu.unifil.br'){
-
                 return redirect()->to('/');
         }
         // check if they're an existing user
