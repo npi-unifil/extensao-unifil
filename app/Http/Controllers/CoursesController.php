@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Courses;
+use App\Models\students;
+
 
 
 use Illuminate\Http\Request;
@@ -29,7 +31,8 @@ class CoursesController extends Controller
 
     function courseId($id){
         $course = Courses::select("*")->where('id', '=', $id)->get()->first();
-        return view('course-page', ['course'=>$course]);
+        $students = Students::select("*")->where('course_id', '=', $id)->get();
+        return view('course-page', ['course'=>$course, 'students'=>$students]);
     }
 
     function deleteCourse($id){

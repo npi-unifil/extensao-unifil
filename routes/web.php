@@ -59,11 +59,14 @@ Route::delete('coursePage/{id}', [CoursesController::class, 'deleteCourse']);
 
 // Estudantes//
 
-Route::get('students', [StudentsController::class, 'studentsPage'])->name('students');
+Route::post('store-students', [StudentsController::class, 'storeStudents']);
+Route::get('student-list', [StudentsController::class, 'studentsList'])->name('studentList');
 
-Route::post('courses', [StudentsController::class, 'storeStudents']);
+Route::get('students', [StudentsController::class, 'studentsList'])->name('students');
 
+Route::post('coursePage/{id}', [StudentsController::class, 'storeStudents'])->name('storeStudents');
 //Route::get('/redirect', [LoginController::class, 'redirectToProvider']);
 //Route::get('/callback', 'LoginController');
+
 
 require __DIR__.'/auth.php';

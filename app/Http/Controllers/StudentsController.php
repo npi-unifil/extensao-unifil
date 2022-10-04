@@ -3,24 +3,28 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Student;
+use App\Models\students;
+use App\Models\Courses;
+use Illuminate\Support\Facades\Route;
 
-
-class StudentsController extends Controller
+class studentsController extends Controller
 {
-    public function studentsPage(){
-        return view('student-page');
+
+function studentsList(){
+    $students = Students::all();
+    return view('course-page', ['students'=>$students]);
 }
 
-public function  storeStudents(Request $request)
+public function  storestudents(Request $request)
     {
-        $student = new Student;
-        $student->studentId = $request->studentId;
-        $student->studentName = $request->studentName;
-        $student->studentCourse = $request->studentCourse;
-        $student->studentEmail = $request->studentEmail;
-        $student->studentPeriod = $request->studentPeriod;
-        $student->save();
-        return redirect('courses')->with('status', 'Activity Post has been inserted');
+        $students = new Students;
+        $students->studentName = $request->studentName;
+        $students->studentEmail = $request->studentEmail;
+        $students->studentsId = $request->studentId;
+        $students->course_id = Route::current()->parameters['id'];
+        $students->save();
+        $students = Students::orderBy('name', 'asc')->get();
+        return redirect()->back()->with('status', 'Activity Post has been inserted');
+
     }
 }
