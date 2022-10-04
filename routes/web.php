@@ -68,5 +68,6 @@ Route::post('coursePage/{id}', [StudentsController::class, 'storeStudents'])->na
 //Route::get('/redirect', [LoginController::class, 'redirectToProvider']);
 //Route::get('/callback', 'LoginController');
 
+Route::get('student-list', ['as' => 'students.studentList', 'uses' => 'StudentController@studentList']);
 
 require __DIR__.'/auth.php';

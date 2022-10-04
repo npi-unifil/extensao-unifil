@@ -23,7 +23,6 @@ public function  storestudents(Request $request)
         $students->studentsId = $request->studentId;
         $students->course_id = Route::current()->parameters['id'];
         $students->save();
-        $students = Students::orderBy('name', 'asc')->get();
         return redirect()->back()->with('status', 'Activity Post has been inserted');
 
     }

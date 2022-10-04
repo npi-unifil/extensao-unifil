@@ -6,7 +6,6 @@ use App\Models\Courses;
 use App\Models\students;
 
 
-
 use Illuminate\Http\Request;
 
 class CoursesController extends Controller
@@ -31,7 +30,9 @@ class CoursesController extends Controller
 
     function courseId($id){
         $course = Courses::select("*")->where('id', '=', $id)->get()->first();
-        $students = Students::select("*")->where('course_id', '=', $id)->get();
+        $students = Students::select("*")->where('course_id', '=', $id)->sortable('studentName')->get();
+
+       // $students = $students->sortable('studentName');
         return view('course-page', ['course'=>$course, 'students'=>$students]);
     }
 

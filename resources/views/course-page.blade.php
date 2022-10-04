@@ -18,18 +18,18 @@
 
 
 
-            <thead  >
+            <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Nome do Aluno</th>
+                    <th scope="col">@sortablelink('studentName', 'name')</th>
                     <th scope="col">Email</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($students as $student )
                 <tr>
-                    <th scope="row">{{$student['studentsId']}}</th>
-                    <td>{{ $student['studentName'] }}</</td>
+                    <td scope="row">{{$student['studentsId']}}</td>
+                    <td scope='row'>{{$student['studentName'] }}</td>
                     <td>{{$student['studentEmail']}}</td>
                 </tr>
                 @endforeach

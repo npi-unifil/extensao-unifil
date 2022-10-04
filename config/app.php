@@ -155,7 +155,7 @@ return [
     */
 
     'providers' => [
-
+        App\Providers\RouteServiceProvider::class,
 
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
@@ -183,7 +183,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        Kyslik\ColumnSortable\ColumnSortableServiceProvider::class,
         /*
          * Laravel Framework Service Providers...
          */
