@@ -20,8 +20,8 @@
 
             <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">@sortablelink('studentName', 'name')</th>
+                    <th scope="col">Matricula</th>
+                    <th scope="col">@sortablelink('studentName', 'Nome Completo')</th>
                     <th scope="col">Email</th>
                 </tr>
             </thead>
@@ -29,8 +29,8 @@
                 @foreach ($students as $student )
                 <tr>
                     <td scope="row">{{$student['studentsId']}}</td>
-                    <td scope='row'>{{$student['studentName'] }}</td>
-                    <td>{{$student['studentEmail']}}</td>
+                    <td scope="row">{{$student['studentName'] }}</td>
+                    <td scope="row">{{$student['studentEmail']}}</td>
                 </tr>
                 @endforeach
             </tbody>

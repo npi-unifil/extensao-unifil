@@ -2,7 +2,7 @@
     <!-- Primary Navigation Menu -->
     <div class=" mx-auto px-2 sm:px-3 lg:px-4" style="background-color:#f97316">
         <div class="flex justify-between h-16">
-            <div class="flex">
+
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
@@ -10,7 +10,7 @@
                             alt="">
                     </a>
                 </div>
-
+                <div class="flex">
                 <!-- Navigation Links -->
                 <div class=" nav-bar hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link class="nav-links" :href="route('dashboard')" :active="request()->routeIs('dashboard')">
@@ -18,9 +18,6 @@
                     </x-nav-link>
                     <x-nav-link class="nav-links" :href="route('list')" :active="request()->routeIs('list')">
                         {{ __('Lista de Atividades') }}
-                    </x-nav-link>
-                    <x-nav-link class="nav-links" :href="route('students')" :active="request()->routeIs('students')">
-                        {{ __('Estudantes') }}
                     </x-nav-link>
                     <x-nav-link class="nav-links" :href="route('courses')" :active="request()->routeIs('courses')">
                         {{ __('Cursos') }}
@@ -115,6 +112,8 @@
     }
 
     .nav-links {
+        display:flex;
+        justify-content: center;
         color: #ffff;
         text-decoration: none;
     }

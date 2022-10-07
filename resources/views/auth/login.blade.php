@@ -21,14 +21,14 @@
                 <x-label for="email" :value="__('Email')" />
 
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')"
-                    required autofocus />
+                    autofocus />
             </div>
 
             <!-- Password -->
             <div class="mt-4">
                 <x-label for="password" :value="__('Senha')" />
 
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required
+                <x-input id="password" class="block mt-1 w-full" type="password" name="password"
                     autocomplete="current-password" />
             </div>
 
@@ -59,10 +59,6 @@
                         {{ __('Esqueceu a senha ?') }}
                     </a>
                 @endif
-
-                <x-button class="ml-3">
-                    {{ __('Logar') }}
-                </x-button>
 
             </div>
         </form>

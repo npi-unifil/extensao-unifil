@@ -31,8 +31,6 @@ class CoursesController extends Controller
     function courseId($id){
         $course = Courses::select("*")->where('id', '=', $id)->get()->first();
         $students = Students::select("*")->where('course_id', '=', $id)->sortable('studentName')->get();
-
-       // $students = $students->sortable('studentName');
         return view('course-page', ['course'=>$course, 'students'=>$students]);
     }
 
