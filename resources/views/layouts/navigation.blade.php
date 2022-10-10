@@ -14,7 +14,7 @@
                 <!-- Navigation Links -->
                 <div class=" nav-bar hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link class="nav-links" :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        {{ __('Pagina Inicial') }}
                     </x-nav-link>
                     <x-nav-link class="nav-links" :href="route('list')" :active="request()->routeIs('list')">
                         {{ __('Lista de Atividades') }}
@@ -44,9 +44,9 @@
                         </button>
                     </x-slot>
 
-                    <x-slot name="content">
+                    <x-slot name="content" style="">
                         <!-- Authentication -->
-                        <form method="POST" action="{{ route('logout') }}">
+                        <form method="POST" action="{{ route('logout') }}" style="">
                             @csrf
 
                             <x-dropdown-link :href="route('logout')"

@@ -16,6 +16,8 @@
         <div class="list-group list-custom">
         <a class="list-group-item" href="{{route('courseid', $course->id)}}">{{$course['courseName']}}</a>
 
+        <div class="list-group list-custom">
+
         <form action="/coursePage/{{ $course->id }}" method="POST"
             onsubmit="return confirm('Tem certeza que deseja remover {{ $course->nome }} ?')">
             @csrf
@@ -30,6 +32,7 @@
                 </svg>
             </button>
         </form>
+    </div>
         </div>
 
 

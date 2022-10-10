@@ -20,9 +20,9 @@
         <a type="button" class="button btn " href='/courses'>Cadastrar Curso</a>
     </div>
 
-    <div class="button-links">
+    {{-- <div class="button-links">
         <a type="button" class="button btn" href="students">Estudantes</a>
-    </div>
+    </div> --}}
 
 
 </x-app-layout>
