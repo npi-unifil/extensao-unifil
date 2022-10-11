@@ -8,7 +8,8 @@ use App\Http\Controllers\CreateCourse;
 use App\Http\Controllers\StudentsController;
 
 use App\Http\Controllers\Auth\LoginController;
-
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\StudentArea;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,7 +58,7 @@ Route::post('store-course-form', [CoursesController::class, 'storeCourse']);
 Route::get('courses', [CoursesController::class, 'courseList'])->name('courses');
 Route::delete('coursePage/{id}', [CoursesController::class, 'deleteCourse']);
 
-// Estudantes//
+// Cadastro de Estudantes//
 
 Route::post('store-students', [StudentsController::class, 'storeStudents']);
 Route::get('student-list', [StudentsController::class, 'studentsList'])->name('studentList');
@@ -65,9 +66,16 @@ Route::get('student-list', [StudentsController::class, 'studentsList'])->name('s
 Route::get('students', [StudentsController::class, 'studentsList'])->name('students');
 
 Route::post('coursePage/{id}', [StudentsController::class, 'storeStudents'])->name('storeStudents');
-//Route::get('/redirect', [LoginController::class, 'redirectToProvider']);
-//Route::get('/callback', 'LoginController');
 
 Route::get('student-list', ['as' => 'students.studentList', 'uses' => 'StudentController@studentList']);
+
+// Perfil do Aluno //
+
+Route::get('students-page', [StudentArea::class, 'studentPageView']);
+
+
+// Projetos //
+
+Route::get('project-page', [ProjectController::class, 'projectPreview']);
 
 require __DIR__.'/auth.php';

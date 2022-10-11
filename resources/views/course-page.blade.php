@@ -64,7 +64,6 @@
                                 <label class="form-label required">Matricula do Aluno</label>
                                 <input type="text" name="studentId" class="form-control">
                             </div>
-
                             <div class="modal-footer">
                                 <button type="submit" class="btn btn-primary">Registrar</button>
 

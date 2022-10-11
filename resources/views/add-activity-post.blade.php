@@ -25,7 +25,7 @@
                     </div>
 
                     <div class="form-floating mb-3">
-                        <textarea style="height: 100px" id="floatingTextarea2" name="description" placeholder="Descrição"
+                        <textarea rows="10" style="height: 100px" id="floatingTextarea2" name="description" placeholder="Descrição"
                             class="form-control floatingInput" required=""></textarea>
                         <label for="floatingTextarea">Descrição</label>
                     </div>

@@ -20,6 +20,10 @@
         <a type="button" class="button btn " href='/courses'>Cadastrar Curso</a>
     </div>
 
+    <div class="button-links">
+        <a type="button" class="button btn" href="/students-page">Área do Aluno</a>
+    </div>
+
     {{-- <div class="button-links">
         <a type="button" class="button btn" href="students">Estudantes</a>
     </div> --}}
