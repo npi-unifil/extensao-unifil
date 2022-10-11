@@ -24,6 +24,5 @@ public function  storestudents(Request $request)
         $students->course_id = Route::current()->parameters['id'];
         $students->save();
         return redirect()->back()->with('status', 'Activity Post has been inserted');
-
     }
 }
