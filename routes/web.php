@@ -71,11 +71,15 @@ Route::get('student-list', ['as' => 'students.studentList', 'uses' => 'StudentCo
 
 // Perfil do Aluno //
 
-Route::get('students-page', [StudentArea::class, 'studentPageView']);
+Route::get('students-page', [StudentArea::class, 'studentPageView'])->name('aluno');
 
 
 // Projetos //
 
 Route::get('project-page', [ProjectController::class, 'projectPreview']);
+Route::get('project-page/{id}', [ProjectController::class, 'projectId'])->name('projectsId');
+Route::post('store-projects', [ProjectController::class, 'storeProjects']);
+
+Route::get('projects-list', [ProjectController::class, 'projectPreview'])->name('projectlist');
 
 require __DIR__.'/auth.php';
