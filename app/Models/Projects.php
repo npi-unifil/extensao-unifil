@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Model;
 
 class Projects extends Model
@@ -10,7 +11,10 @@ class Projects extends Model
     use HasFactory;
 
 
-    public function projects() {
-        return $this->belongsTo(Students::class);
+    public function alunos(): HasMany {
+        return $this->hasMany(Students::class, 'project_id', 'id');
     }
+
+
+
 }

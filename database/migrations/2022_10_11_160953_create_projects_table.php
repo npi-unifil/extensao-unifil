@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('projectsName');
             $table->string('ProjectsDescription');
-            $table->unsignedBigInteger('students');
-            $table->foreign('students')->references('studentsId')->on('students');
+            // $table->unsignedBigInteger('students')->nullable();
+            // $table->foreign('students')->references('studentsId')->on('students')->nullable();
             $table->timestamps();
         });
     }

@@ -20,9 +20,15 @@ class Students extends Model
         return $this->belongsTo(Courses::class);
     }
 
+    public function projects() {
+        return $this->belongsTo(Projects::class);
+    }
+
 
     //Conexão com a tabela de Projetos //
-    public function projects(): HasMany {
-        return $this->hasMany(Projects::class, 'students', 'studentsId');
-    }
+    // public function projects(): HasMany {
+    //     return $this->hasMany(Projects::class, 'students', 'studentsId');
+    // }
+
+
 }
