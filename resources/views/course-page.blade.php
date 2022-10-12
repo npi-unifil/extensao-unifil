@@ -23,14 +23,16 @@
                     <th scope="col">Matricula</th>
                     <th scope="col">@sortablelink('studentName', 'Nome Completo')</th>
                     <th scope="col">Email</th>
+                    <th scope="col">Equipe</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($students as $student )
                 <tr>
-                    <td scope="row">{{$student['studentsId']}}</td>
+                    <td scope="row">{{$student['matricula']}}</td>
                     <td scope="row">{{$student['studentName'] }}</td>
                     <td scope="row">{{$student['studentEmail']}}</td>
+                    {{-- <td scope="row">{{$project['projectName']}}</td> --}}
                 </tr>
                 @endforeach
             </tbody>
@@ -41,7 +43,7 @@
 
 
     <div class="container mt-5">
-        <button type="button" class="btn btn-primary centralizar" data-bs-toggle="modal" data-bs-target="#myModal">Cadastrar Aluno</button>
+        <button type="button" class="btn  centralizar" data-bs-toggle="modal" data-bs-target="#myModal">Cadastrar Aluno</button>
         <div class="modal" id="myModal">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -64,6 +66,20 @@
                                 <label class="form-label required">Matricula do Aluno</label>
                                 <input type="text" name="studentId" class="form-control">
                             </div>
+                            <div class="mb-3">
+                                <div class="form-floating mb-3">
+                                    <select
+                                    class="form-select form-control"
+                                    aria-label="Default select example"
+                                    name='studentTeam'>
+                                    @foreach($projects as $project)
+                                        <option selected>Equipes</option>
+                                        <option value="1">{{$project['projectName']}}</option>
+                                        @endforeach
+                                    </select>
+                                    <label for="floatingTextarea">Ingressar Aluno a Equipe</label>
+                                </div>
+                            </div>
                             <div class="modal-footer">
                                 <button type="submit" class="btn btn-primary">Registrar</button>
 
@@ -83,10 +99,30 @@
 
 <style>
 
+.centralizar {
+    display: flex;
+    justify-content: end !important;
+    background-color: #fb923c !important;
+    color: #ffff !important;
+}
+
+.header-card {
+        color: #ffff;
+        background-color: #fb923c;
+        display: flex;
+        justify-content: center
+    }
+
+
+.modal-header {
+            background: #F7941E;
+            color: #fff;
+        }
+
 .tabela {
     display:flex;
     justify-content: center;
-    width: 50%;
+    width: 80%;
 }
 
 .table {

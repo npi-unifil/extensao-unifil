@@ -9,6 +9,11 @@
             <div class=" header-card card-body card-background">Página de Projetos</div>
         </div>
     </x-slot>
+@foreach($projects as $project)
+    <div class="list-group list-custom">
+        <a class="list-group-item" href="{{route('projectsId', $project->id)}}">{{$project['projectsName']}}</a>
+        <div class="list-group list-custom">
+            @endforeach
 </x-app-layout>
 
 <style>

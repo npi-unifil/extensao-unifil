@@ -28,15 +28,15 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
                         <div class="modal-body">
-                            <form method="post" action="">
+                            <form method="post" action="{{url('store-projects')}}">
                                 @csrf
                                 <div class="mb-3">
                                     <label class="form-label">Nome da Equipe</label>
-                                    <input type="text" class="form-control" name="nomeProjeto" >
+                                    <input type="text" class="form-control" name="projectsName" >
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label required">Descrição do Projeto</label>
-                                    <textarea class="form-control" rows="5" id="comment"></textarea>
+                                    <textarea class="form-control" rows="5" id="comment" name="projectsDescription"></textarea>
                                 </div>
 
                                 <div class="modal-footer">
