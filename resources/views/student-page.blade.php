@@ -12,7 +12,7 @@
     </x-slot>
 
     <div class="button-links">
-        <a type="button" class="button btn" href="/project-page">Projetos</a>
+        <a type="button" class="button btn" href="/project-list-page">Projetos</a>
     </div>
 
 

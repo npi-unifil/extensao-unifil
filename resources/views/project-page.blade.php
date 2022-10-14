@@ -1,26 +1,68 @@
 @extends('layout')
 
-@section('cabecalho')
-@endsection()
-
 <x-app-layout>
     <x-slot name="header">
         <div class="card">
-            <div class=" header-card card-body card-background">Página de Projetos</div>
+            <div class=" header-card card-body card-background">{{ $projects['projectsName'] }}</div>
         </div>
     </x-slot>
-@foreach($projects as $project)
-    <div class="list-group list-custom">
-        <a class="list-group-item" href="{{route('projectsId', $project->id)}}">{{$project['projectsName']}}</a>
-        <div class="list-group list-custom">
-            @endforeach
+
+    <div class="card">
+        <h5 class="card-header">{{$projects['projectsName']}}</h5>
+        <div class="card-body">
+            <h5 class="card-title">{{$projects['projectsDesc']}}</h5>
+            <p class="card-text"></p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h5 class="card-header">Atividades</h5>
+        <div class="card-body">
+
+        </div>
+    </div>
+
 </x-app-layout>
 
+
 <style>
-    .header-card {
-    color: #ffff;
-    background-color: #fb923c;
+
+.centralizar {
     display: flex;
-    justify-content: center
+    justify-content: end !important;
+    background-color: #fb923c !important;
+    color: #ffff !important;
 }
+
+.header-card {
+        color: #ffff;
+        background-color: #fb923c;
+        display: flex;
+        justify-content: center
+    }
+
+
+.modal-header {
+            background: #F7941E;
+            color: #fff;
+        }
+
+.tabela {
+    display:flex;
+    justify-content: center;
+    width: 80%;
+}
+
+.table {
+    margin: 0 auto;
+}
+
+.tablediv {
+    display:flex;
+    justify-content: center;
+    width: 100%;
+}
+
 </style>

@@ -12,13 +12,8 @@
     {{--@foreach ($students as $student)--}}
     <div class="tablediv">
         <div class="tabela">
-        <table class="table tablereal table-sm table-dark" style="width: 100%; ">
-
-
-
-
-
-            <thead>
+        <table class="table tablereal table-sm table-light" style="width: 100%; ">
+            <thead class="tabela-header">
                 <tr>
                     <th scope="col">Matricula</th>
                     <th scope="col">@sortablelink('studentName', 'Nome Completo')</th>
@@ -28,13 +23,15 @@
             </thead>
             <tbody>
                 @foreach ($students as $student )
+
                 <tr>
                     <td scope="row">{{$student['matricula']}}</td>
                     <td scope="row">{{$student['studentName'] }}</td>
                     <td scope="row">{{$student['studentEmail']}}</td>
-                    {{-- <td scope="row">{{$project['projectName']}}</td> --}}
+                    <td scope="row">{{$student->project->projectsName}}
                 </tr>
                 @endforeach
+
             </tbody>
         </table>
     </div>
@@ -42,7 +39,7 @@
 
 
 
-    <div class="container mt-5">
+    <div class="container">
         <button type="button" class="btn  centralizar" data-bs-toggle="modal" data-bs-target="#myModal">Cadastrar Aluno</button>
         <div class="modal" id="myModal">
             <div class="modal-dialog">
@@ -56,28 +53,27 @@
                             @csrf
                             <div class="mb-3">
                                 <label class="form-label">Nome Completo</label>
-                                <input type="text" class="form-control" name="studentName" >
+                                <input type="text" class="form-control" name="studentName" required>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label required">Email Institucional</label>
-                                <input type="email" class="form-control" name="studentEmail">
+                                <input type="email" class="form-control" name="studentEmail" required>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label required">Matricula do Aluno</label>
-                                <input type="text" name="studentId" class="form-control">
+                                <input type="text" name="studentId" class="form-control" required>
                             </div>
                             <div class="mb-3">
-                                <div class="form-floating mb-3">
-                                    <select
+                                <label for="form-label">Ingressar Aluno a Equipe</label>
+                                <div class=" mb-3">
+                                <select
                                     class="form-select form-control"
-                                    aria-label="Default select example"
-                                    name='studentTeam'>
-                                    @foreach($projects as $project)
-                                        <option selected>Equipes</option>
-                                        <option value="1">{{$project['projectName']}}</option>
+                                    aria-label="select example"
+                                    name='studentTeam'required>
+                                        @foreach($projects as $project)
+                                        <option value="{{$project['id']}}">{{$project['projectsName']}}</option>
                                         @endforeach
-                                    </select>
-                                    <label for="floatingTextarea">Ingressar Aluno a Equipe</label>
+                                </select>
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -100,10 +96,13 @@
 <style>
 
 .centralizar {
-    display: flex;
-    justify-content: end !important;
     background-color: #fb923c !important;
     color: #ffff !important;
+}
+
+.container {
+    display: flex;
+    justify-content: end;
 }
 
 .header-card {
@@ -123,6 +122,10 @@
     display:flex;
     justify-content: center;
     width: 80%;
+}
+
+.tabela-header{
+    border-radius: 10px;
 }
 
 .table {
