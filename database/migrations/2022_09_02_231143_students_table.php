@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('matricula');
             $table->string('studentName');
             $table->string('studentEmail');
+            $table->unsignedBigInteger('project_id');
             $table->unsignedBigInteger('course_id');
             $table->foreign('course_id')->references('id')->on('courses');
             $table->timestamps();
