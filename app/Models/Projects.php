@@ -11,7 +11,7 @@ class Projects extends Model
     use HasFactory;
 
 
-    public function alunos(): HasMany {
+    public function alunos() {
         return $this->hasMany(Students::class, 'project_id', 'id');
     }
 

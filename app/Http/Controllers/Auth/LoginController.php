@@ -21,12 +21,14 @@ class LoginController
             $user = Socialite::driver('google')->user();
 
         } catch (\Exception $e) {
-            // dd($e);
+            //dd($e);
             return redirect('/');
         }
         // only allow people with @company.com to login
         if(explode("@", $user->email)[1] !== 'edu.unifil.br'){
+            if(explode("@", $user->email)[1] !== 'unifil.com'){
                 return redirect()->to('/');
+            }
         }
         // check if they're an existing user
         $existingUser = User::where('email', $user->email)->first();

@@ -8,9 +8,10 @@ use App\Models\Projects;
 
 class ProjectController extends Controller
 {
-    function projectPreview(){
+    public function projectPreview(){
         $projects = Projects::all();
-        return view('project-page', ['projects'=>$projects]);
+
+        return view('project-list-page', ['projects'=>$projects]);
     }
 
 
@@ -18,14 +19,14 @@ class ProjectController extends Controller
     {
         $projects = new Projects;
         $projects->projectsName = $request->projectsName;
-        $projects->projectsDescription = $request->projectsDescription;
+        $projects->projectsDesc = $request->projectsDescription;
         $projects->save();
         return redirect('students-page')->with('status', 'Activity Post has been inserted');
     }
 
-    function projectId($id){
+    public function getProjects($id){
         $projects = Projects::select("*")->where('id', '=', $id)->get()->first();
-    // $students = Students::select("*")->where('course_id', '=', $id)->sortable('studentName')->get();
+    //  $students = Students::select("*")->where('course_id', '=', $id)->sortable('studentName')->get();
         return view('project-page', ['projects'=>$projects]);
     }
 }

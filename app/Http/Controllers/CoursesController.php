@@ -8,6 +8,7 @@ use App\Models\Projects;
 
 
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class CoursesController extends Controller
 {
@@ -32,7 +33,7 @@ class CoursesController extends Controller
     function courseId($id){
         $course = Courses::select("*")->where('id', '=', $id)->get()->first();
         $students = Students::select("*")->where('course_id', '=', $id)->sortable('studentName')->get();
-        $projects = Projects::select("*")->where('project_id', '=', $id)->get();
+        $projects = Projects::all();
         return view('course-page', ['course'=>$course, 'students'=>$students, 'projects'=>$projects]);
     }
 
