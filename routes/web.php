@@ -41,8 +41,8 @@ Route::get('/dashboard', function () {
 
 //Atividades
 
-Route::get('form', [PostController::class, 'index'])->middleware('admin');
-Route::post('store-form', [PostController::class, 'store'])->middleware('admin');
+Route::get('form', [ActivityController::class, 'index'])->middleware('admin');
+Route::post('store-form', [ActivityController::class, 'store'])->middleware('admin');
 Route::get('list', [ActivityController::class, 'showActivity'])->name('list')->middleware('admin');
 Route::delete('list/{id}', [ActivityController::class, 'delete'])->middleware('admin');
 Route::get('list/edit/{id}', [ActivityController::class, 'edit'])->middleware('admin');
@@ -57,7 +57,7 @@ Route::get('courseForm', [CoursesController::class, 'CoursePage'])->middleware('
 Route::post('store-course-form', [CoursesController::class, 'storeCourse'])->middleware('admin');
 Route::get('courses', [CoursesController::class, 'courseList'])->name('courses')->middleware('admin');
 
-Route::get('admin/courses',[CoursesController::class, 'courseList'])->name('courses')->middleware('admin');
+Route::get('courses',[CoursesController::class, 'courseList'])->name('courses')->middleware('admin');
 Route::delete('coursePage/{id}', [CoursesController::class, 'deleteCourse'])->middleware('admin');
 
 // Cadastro de Estudantes//
@@ -74,6 +74,8 @@ Route::get('student-list', ['as' => 'students.studentList', 'uses' => 'StudentCo
 // Perfil do Aluno //
 
 Route::get('students-page', [StudentsController::class, 'studentPageView'])->name('aluno');
+
+Route::get('student-activity', [StudentsController::class, 'studentSendActivity']);
 
 // Projetos //
 

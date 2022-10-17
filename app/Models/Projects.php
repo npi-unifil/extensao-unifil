@@ -15,6 +15,8 @@ class Projects extends Model
         return $this->hasMany(Students::class, 'project_id', 'id');
     }
 
-
+    public function atividades() {
+        return $this->hasMany(Activity::class, 'project_id', 'id');
+    }
 
 }

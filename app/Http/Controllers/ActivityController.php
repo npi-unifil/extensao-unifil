@@ -8,6 +8,24 @@ use Illuminate\Console\Scheduling\Event;
 
 class ActivityController extends Controller
 {
+    public function index()
+    {
+        return view('add-activity-post');
+    }
+
+    public function  store(Request $request)
+    {
+        $post = new Post;
+        $post->title = $request->title;
+        $post->description = $request->description;
+        $post->date = $request->date;
+        $post->grade = $request->grade;
+        //$post->file = $request->file;
+        $post->save();
+        return redirect('list')->with('status', 'Activity Post has been inserted');
+    }
+
+
     function showActivity(){
         $data = Post::all();
         return view('list-activity-post', ['posts'=>$data]);
@@ -40,6 +58,10 @@ class ActivityController extends Controller
         $data->save();
 
         return redirect('list')->with('success', 'Stock updated.');
+    }
+
+    public function  activityId($id){
+        $post = Post::all();
     }
 
 }

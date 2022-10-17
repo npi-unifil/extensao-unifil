@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Projects;
+use App\Models\Post;
 
 
 class ProjectController extends Controller
@@ -26,7 +27,8 @@ class ProjectController extends Controller
 
     public function getProjects($id){
         $projects = Projects::select("*")->where('id', '=', $id)->get()->first();
+        $data = Post::all();
     //  $students = Students::select("*")->where('course_id', '=', $id)->sortable('studentName')->get();
-        return view('project-page', ['projects'=>$projects]);
+        return view('project-page', ['projects'=>$projects, 'posts'=>$data]);
     }
 }
