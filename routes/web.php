@@ -65,12 +65,16 @@ Route::delete('coursePage/{id}', [CoursesController::class, 'deleteCourse'])->mi
 Route::post('store-students', [StudentsController::class, 'storeStudents'])->middleware('admin');
 Route::get('student-list', [StudentsController::class, 'studentsList'])->name('studentList')->middleware('admin');
 
+Route::delete('coursePage/{id}', [StudentsController::class, 'studentDelete']);
+
+// Route::get('/coursePage/studentEdit/{id}', [StudentsController::class, 'studentEdit'])->name('studentEdit');
+// Route::patch('update/{id}', [ActivityController::class, 'studentUpdate'])->name('updateStudents');
+
 Route::get('students', [StudentsController::class, 'studentsList'])->name('students')->middleware('admin');
 
 Route::post('coursePage/{id}', [StudentsController::class, 'storeStudents'])->name('storeStudents')->middleware('admin');
 
 Route::get('student-list', ['as' => 'students.studentList', 'uses' => 'StudentController@studentList'])->middleware('admin');
-
 // Perfil do Aluno //
 
 Route::get('students-page', [StudentsController::class, 'studentPageView'])->name('aluno');

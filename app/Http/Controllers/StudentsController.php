@@ -33,6 +33,43 @@ function studentsList(){
             return redirect()->back()->with('status', 'Activity Post has been inserted');
         }
 
+        public function studentSendActivity() {
+            return view('student-activity');
+        }
+
+        public function studentDelete($id) {
+            $students=Students::find($id);
+            $students->delete();
+            return redirect()-> back();
+        }
+
+        function studentEdit($id){
+            $students=Students::find($id);
+            return view('edit-student-page', ['student' => $students]);
+        }
+
+        function studentUpdate( Request $request, $id){
+            $request->validate([
+                'studentName'=>'required',
+                'studentEmail'=>'required',
+                'matricula'=>'required',
+                'project_id'=>'required',
+
+            ]);
+            dd($request);
+
+            $students = Students::find($id);
+            // Getting values from the blade template form
+            $students->studentName =  $request->get('studentName');
+            $students->studentEmail = $request->get('studentEmail');
+            $students->matricula = $request->get('matricula');
+            $students->project_id = $request->get('project_id');
+            $students->save();
+
+            return redirect()->back();
+        }
+
+
     public function projectPreview(){
         $projects = Projects::all();
         return view('project-list-page', ['projects'=>$projects]);
