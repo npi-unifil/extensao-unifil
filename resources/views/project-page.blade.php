@@ -9,25 +9,61 @@
 
     <div class="cards">
     <div class="card-projects card">
-        <h5 class="card-header">Descrição do {{$projects['projectsName']}}</h5>
-        <div class="card-body">
+        <h5 class="card-header">Descrição {{$projects['projectsName']}}</h5>
+        <div class="card-body corpo-card">
             <h5 class="card-title">{{$projects['projectsDesc']}}</h5>
         </div>
         <h5 class='card-header' style="margin-top: 10px;">Atividades do Projeto</h5>
         <div class="card-body">
             @foreach ($posts as $post )
-            <div class="card-projects card">
-            <a href="" class="card-title">{{$post->title}}</a>
+            <div class="card-activities card atividades">
+            <a href="" class="card-title titulo-card">{{$post->title}}</a>
             {{-- {{route('activityId', $post->id)}} --}}
         </div>
             @endforeach
         </div>
-    </div>
+            <h5 class="card-header">Alunos Relacionados</h5>
+            <div class="card-body">
+                @foreach ($students as $student)
+                <div class="atividades">
+                <h5 class="card-title">{{$student['studentName'] }}</h5>
+                </div>
+                @endforeach
+            </div>
 </div>
 </x-app-layout>
 
 
 <style>
+
+    .atividades {
+        display:flex;
+        align-content: space-around;
+        justify-content: center;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .corpo-card {
+        align-self: center;
+        display: grid;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .titulo-card {
+        color:#FFF;
+        display: flex;
+        justify-content: center;
+        opacity: 0.9;
+        text-decoration: none;
+        width: 100%;
+    }
+
+    .titulo-card:hover{
+        color:#FFF;
+        opacity: 1;
+    }
 
     .cards {
         display: flex;
@@ -35,9 +71,18 @@
         width: 100%
     }
 
+
+    .card-activities {
+        background-color:#374151 !important;
+        display:flex;
+        justify-content: center;
+        width: 100%;
+    }
+
     .card-projects {
         width: 70%;
     }
+
 
     .card-header {
         background-color:#fb923c !important;
