@@ -17,8 +17,8 @@
         <div class="card-body">
             @foreach ($posts as $post )
             <div class="card-activities card atividades">
-            <a href="" class="card-title titulo-card">{{$post->title}}</a>
-            {{-- {{route('activityId', $post->id)}} --}}
+            <a href="{{route('getActivity', $post->id)}}" class="card-title titulo-card">{{$post->title}}</a>
+            {{-- {{route('courseId', $course->id)}} --}}
         </div>
             @endforeach
         </div>
