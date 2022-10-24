@@ -30,7 +30,7 @@
                     <label for="floatingInput">Titulo</label>
                 </div>
                 <div class="form-group form-floating">
-                    <textarea type="text" name="description" class="form-control"  style="height:100%"required="">{{$post->description}}</textarea>
+                    <textarea type="text" name="description" rows="15" class="form-control"  style="height:100%"required="">{{$post->description}}</textarea>
                     <label for="floatingTextArea">Descrição</label>
                 </div>
                 <div class="form-group form-floating">

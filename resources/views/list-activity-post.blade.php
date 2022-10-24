@@ -62,6 +62,7 @@
                                                             </button>
                                                         </form>
                                                     </div>
+
                                                 </div>
                                                 <div class="card-footer text-muted">
                                                     <h6>Data de Entrega</h6>{{ date('d-m-Y', strtotime($post['date'])) }}
