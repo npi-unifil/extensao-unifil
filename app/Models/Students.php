@@ -16,7 +16,7 @@ class Students extends Model
 
     public $sortable = ['studentName'];
 
-    public function curso() {
+    public function course() {
         return $this->belongsTo(Courses::class);
     }
 

@@ -61,7 +61,8 @@ class ActivityController extends Controller
     }
 
     public function  activityId($id){
-        $post = Post::all();
+        $post = Post::select("*")->where('id', '=', $id)->get()->first();
+        return view('student-activity', ['post' => $post]);
     }
 
 }

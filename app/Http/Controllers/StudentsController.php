@@ -34,7 +34,7 @@ function studentsList(){
         }
 
         public function studentSendActivity() {
-            return view('student-activity');
+        return view('student-activity');
         }
 
         public function studentDelete($id) {
@@ -56,9 +56,9 @@ function studentsList(){
                 'project_id'=>'required',
 
             ]);
-            dd($request);
 
             $students = Students::find($id);
+            $projects = Projects::all();
             // Getting values from the blade template form
             $students->studentName =  $request->get('studentName');
             $students->studentEmail = $request->get('studentEmail');
@@ -66,7 +66,7 @@ function studentsList(){
             $students->project_id = $request->get('project_id');
             $students->save();
 
-            return redirect()->back();
+            return view('course-page', $students->course->id);
         }
 
 
