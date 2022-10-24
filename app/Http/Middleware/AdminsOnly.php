@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class AdminsOnly
 {
@@ -16,9 +17,10 @@ class AdminsOnly
      */
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->user()?->username == 'Rafael Casa Santa Pierote'){
+        if(auth()->user()?->username == 'RAFAEL CASA SANTA'){
             return redirect()->to('/dashboard');
         }
+
         return $next($request);
     }
 }
