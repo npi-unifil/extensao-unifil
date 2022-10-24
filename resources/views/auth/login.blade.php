@@ -17,7 +17,7 @@
             @csrf
 
             <!-- Email Address -->
-            <div>
+            {{-- <div>
                 <x-label for="email" :value="__('Email')" />
 
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')"
@@ -30,7 +30,7 @@
 
                 <x-input id="password" class="block mt-1 w-full" type="password" name="password"
                     autocomplete="current-password" />
-            </div>
+            </div> --}}
 
             <div class="google-login-button mt-4">
                 <x-button class="google">
