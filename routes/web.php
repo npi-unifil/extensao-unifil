@@ -49,6 +49,8 @@ Route::get('list/edit/{id}', [ActivityController::class, 'edit'])->middleware('a
 Route::patch('list/{id}/update', [ActivityController::class, 'update'])->name('update')->middleware('admin');
 //Route::get('delete/{id}', ActivityController::class, 'delete')
 
+Route::get('list/view/{id}', [ActivityController::class, 'viewAc'])->name('view-activity');
+
 
 //Cursos//
 

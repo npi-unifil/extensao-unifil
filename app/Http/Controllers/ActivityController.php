@@ -13,6 +13,11 @@ class ActivityController extends Controller
         return view('add-activity-post');
     }
 
+    public function viewAc($id) {
+        $post = Post::select("*")->where('id', '=', $id)->get()->first();
+        return view('view-ac', ['posts'=>$post]);
+    }
+
     public function  store(Request $request)
     {
         $post = new Post;
