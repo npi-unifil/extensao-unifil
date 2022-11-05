@@ -9,8 +9,8 @@ class Post extends Model
 {
     use HasFactory;
 
-
-    public function project() {
-        return $this->belongsTo(Projects::class);
+    public function activities()
+    {
+        return $this->hasMany(Activity::class, 'post_id', 'id');
     }
 }

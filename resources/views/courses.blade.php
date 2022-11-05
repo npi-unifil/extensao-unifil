@@ -60,8 +60,31 @@
                     <a class="list-group-item" href="{{route('courseId', $course->id)}}">{{$course['courseName']}}</a>
                 </td>
                 <td>
+
+                    <div class="modal" id="delete-students">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header modal-cabeca">
+                                    <h5 class="modal-title">Apagar Estudante</h5>
+                                    {{-- <button type="button" class="btn-close" data-bs-dismiss="modal"></button> --}}
+                                </div>
+                                <div class="modal-body">
+                                    <b style="display:flex; justify-content:center;">Deseja Realmente remover o aluno ?</b>
+                                    <form action="/coursePage/{{ $course->id }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        </div>
+                                        <div class="modal-footer botoes-acao">
+                                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                                            <button type="submit" class="btn centralizar">Excluir</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
                     <form action="/coursePage/{{ $course->id }}" method="POST"
-                        onsubmit="return confirm('Tem certeza que deseja remover {{ $course->nome }} ?')">
+                        onsubmit="return confirm('Não será possivel remover o curso, se existir alunos nele, tem certeza que deseja remover {{ $course->courseName }} ? ')">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class='btn btn-danger'>
@@ -86,6 +109,9 @@
     <div class="newCourse">
         <a type="button" class="button btn " href='courseForm'>Criar novo curso</a>
     </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
 </x-app-layout>
 
 

@@ -16,7 +16,9 @@
             <thead class="tabela-header">
                 <tr>
                     <th scope="col">Matricula</th>
-                    <th scope="col">@sortablelink('studentName', 'Nome Completo')</th>
+                    <th scope="col">
+                        @sortablelink('studentName', 'Nome Completo')
+                    </th>
                     <th scope="col">Email</th>
                     <th scope="col">Equipe</th>
                     <th scope="col" style="display:flex; justify-content:center;">Ação</th>

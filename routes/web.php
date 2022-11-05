@@ -70,7 +70,7 @@ Route::get('student-list', [StudentsController::class, 'studentsList'])->name('s
 Route::delete('studentDelete/{id}', [StudentsController::class, 'studentDelete'])->name('studentDelete');
 
 Route::get('/coursePage/studentEdit/{id}', [StudentsController::class, 'studentEdit'])->name('studentEdit');
-Route::post('update/{id}', [StudentsController::class, 'studentUpdate'])->name('updateStudents');
+Route::patch('update/{id}', [StudentsController::class, 'studentUpdate'])->name('updateStudents');
 
 Route::get('students', [StudentsController::class, 'studentsList'])->name('students')->middleware('admin');
 
@@ -88,8 +88,8 @@ Route::get('students-page', [StudentsController::class, 'studentPageView'])->nam
 Route::get('project-list-page', [ProjectController::class, 'projectPreview'])->name('projects');
 Route::get('project-page/{id}', [ProjectController::class, 'getProjects'])->name('getProjects');
 Route::post('store-projects', [ProjectController::class, 'storeProjects']);
-
 Route::get('activityId/{id}', [ActivityController::class, 'activityId'])->name('getActivity');
-
 Route::get('projects-list', [ProjectController::class, 'projectPreview'])->name('projectlist');
+Route::post('store-ac', [ActivityController::class, 'sendAcToTeacher']);
+Route::get('ac-view', [ActivityController::class, 'showActivityToTeacher']);
 require __DIR__.'/auth.php';

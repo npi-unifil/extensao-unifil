@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Courses;
-use App\Models\students;
+use App\Models\Students;
 use App\Models\Projects;
 
 
@@ -39,6 +39,7 @@ class CoursesController extends Controller
 
     function deleteCourse($id){
         $course=Courses::find($id);
+        // $students=Students::all();
         $course->delete();
             return redirect()-> back();
     }

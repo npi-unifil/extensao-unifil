@@ -11,12 +11,13 @@ class Projects extends Model
     use HasFactory;
 
 
-    public function alunos() {
+    public function alunos()
+    {
         return $this->hasMany(Students::class, 'project_id', 'id');
     }
 
-    public function atividades() {
+    public function activities()
+    {
         return $this->hasMany(Activity::class, 'project_id', 'id');
     }
-
 }

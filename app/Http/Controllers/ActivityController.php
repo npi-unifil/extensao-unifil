@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\activity;
+use App\Models\Projects;
 use Illuminate\Console\Scheduling\Event;
+use Illuminate\Support\Facades\Route;
+
 
 class ActivityController extends Controller
 {
@@ -13,9 +17,10 @@ class ActivityController extends Controller
         return view('add-activity-post');
     }
 
-    public function viewAc($id) {
-        $post = Post::select("*")->where('id', '=', $id)->get()->first();
-        return view('view-ac', ['posts'=>$post]);
+    public function viewAc($id)
+    {
+        $post = Post::findOrFail($id);
+        return view('view-ac', ['post' => $post]);
     }
 
     public function  store(Request $request)
@@ -31,28 +36,32 @@ class ActivityController extends Controller
     }
 
 
-    function showActivity(){
+    function showActivity()
+    {
         $data = Post::all();
-        return view('list-activity-post', ['posts'=>$data]);
+        return view('list-activity-post', ['posts' => $data]);
     }
 
-    function delete($id){
-        $data=Post::find($id);
+    function delete($id)
+    {
+        $data = Post::find($id);
         $data->delete();
-            return redirect()-> back();
+        return redirect()->back();
     }
 
 
-    function edit($id){
-        $data=Post::find($id);
+    function edit($id)
+    {
+        $data = Post::find($id);
         return view('edit', ['post' => $data]);
     }
 
-    function update( Request $request, $id){
+    function update(Request $request, $id)
+    {
         $request->validate([
-            'title'=>'required',
-            'description'=>'required',
-            'date'=>'required',
+            'title' => 'required',
+            'description' => 'required',
+            'date' => 'required',
         ]);
 
         $data = Post::find($id);
@@ -65,11 +74,24 @@ class ActivityController extends Controller
         return redirect('list')->with('success', 'Stock updated.');
     }
 
-    public function  activityId($id){
+    public function  activityId($id)
+    {
         $post = Post::select("*")->where('id', '=', $id)->get()->first();
         return view('student-activity', ['post' => $post]);
     }
 
+    public function sendAcToTeacher(Request $request)
+    { {
+            // dd( Route::current()->parameters['id']);
+            $sendActivity = new Activity;
+            $sendActivity->activityLink = $request->activityLink;
+            $sendActivity->activityDescription = $request->activityDescription;
+            $sendActivity->post_id = $request->post_id;
+            $sendActivity->project_id = 1; // Mudar para id do projeto do aluno logado!!!!
+            $sendActivity->save();
+            return redirect()->back();
+        }
+    }
 }
 //$data=Post::find($request->id);
 //        $data->title = $request->title;
